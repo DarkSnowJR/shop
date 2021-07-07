@@ -1,8 +1,5 @@
 from django.contrib import admin
 from .models import Order, OrderItem
-import csv
-import datetime
-from django.http import HttpResponse
 
 # Register your models here.
 class OrderItemInLine(admin.TabularInline):

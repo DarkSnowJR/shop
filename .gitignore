@@ -40,6 +40,7 @@ GitHub.sublime-settings
 # Only for Development
 */migrations/*.py
 */migrations/*.pyc
+*/__pycache__/*.pyc
 **/migrations/*
 !**/migrations
 !**/migrations/__init__.py

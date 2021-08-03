@@ -1,4 +1,5 @@
-from django.shortcuts import render
+from django.urls import reverse
+from django.shortcuts import render, redirect
 from .models import OrderItem
 from .forms import OrderCreateForm
 from cart.cart import Cart
@@ -28,11 +29,15 @@ def order_create(request):
                                          product=item['product'],
                                          price=item['price'],
                                          quantity=item['quantity'])
+            del request.session['coupon_id']
             # clear the cart
             cart.clear()
             # launch asynchronous task
             order_created.delay(order.id)
-            return render(request, 'orders/order/created.html', {'order': order})
+            # set the order in the session
+            request.session['order_id'] = order.id
+            # redirect for payment
+            return redirect(reverse('zarinpal:request'))
     else:
         form = OrderCreateForm()
     return render(request, 'orders/order/create.html', {'cart': cart, 'form': form})

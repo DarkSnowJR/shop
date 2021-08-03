@@ -25,7 +25,7 @@ def cart_remove(request, product_id):
     if len(cart) != 0:
         return redirect('cart:cart_detail')
 
-    return redirect('shopt:product_list')
+    return redirect('shop:product_list')
 
 def cart_detail(request):
     cart = Cart(request)

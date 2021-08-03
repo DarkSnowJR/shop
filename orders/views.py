@@ -29,7 +29,8 @@ def order_create(request):
                                          product=item['product'],
                                          price=item['price'],
                                          quantity=item['quantity'])
-            del request.session['coupon_id']
+            if 'coupon_id' in request.session:
+                del request.session['coupon_id']
             # clear the cart
             cart.clear()
             # launch asynchronous task

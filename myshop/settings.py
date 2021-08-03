@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'cart.apps.CartConfig',
     'orders.apps.OrdersConfig',
     'coupons.apps.CouponsConfig',
+    'rosetta',
     'zarinpal',
 ]
 
@@ -144,7 +145,7 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 
 LOCALE_PATHS = (
-os.path.join(BASE_DIR, 'locale/'),
+    os.path.join(BASE_DIR, 'locale/'),
 )
 
 CART_SESSION_ID = 'cart'

@@ -18,6 +18,7 @@ click-repl==0.2.0
 cssselect2==0.4.1
 defusedxml==0.7.1
 Django==3.2.5
+django-rosetta==0.9.6
 flower==1.0.0
 html5lib==1.1
 humanize==3.10.0
@@ -26,6 +27,7 @@ isodate==0.6.0
 kombu==5.1.0
 lxml==4.6.3
 Pillow==8.3.0
+polib==1.1.1
 prometheus-client==0.11.0
 prompt-toolkit==3.0.19
 pycparser==2.20
